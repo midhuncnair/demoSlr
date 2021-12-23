@@ -1,19 +1,26 @@
 # https://blog.finxter.com/deploying-a-machine-learning-model-in-fastapi/
 
-import uvicorn
-from fastapi import FastAPI
-import numpy as np
 import pickle
+
+import uvicorn
+import numpy as np
+
+from fastapi import FastAPI
+
+from .constants import MODEL_PICKLE_FILE_NAME
+
 
 app = FastAPI()
 
 
-pickle_in = open("demo_slr.pkl","rb")
-model=pickle.load(pickle_in)
+pickle_in = open(MODEL_PICKLE_FILE_NAME, "rb")
+model = pickle.load(pickle_in)
+
 
 @app.get("/")
 async def root():
    return {"message": "Hello World"}
+
 
 @app.post("/predict")
 def predict(X:float):
@@ -22,7 +29,3 @@ def predict(X:float):
    return {
        'prediction': prediction[0],
    }
-
-
-if __name__ == '__main__':
-   uvicorn.run(app, host='127.0.0.1', port=8000)
