@@ -1,22 +1,23 @@
 import os
 
-os.chdir(os.path.abspath(os.path.dirname(__file__)))
+import numpy as np
+import pickle
 
-# os.chdir('D:\\ssridhar\\research\\AnalyticsBigdataML\\ML Course\\GreatLearning\\MTech-Weekend ML-1\\Session 8\\demo_slr')
+from flask import Flask, request, jsonify, render_template
+
+from .constants import MODEL_PICKLE_FILE_NAME
+
+
+app = Flask(__name__) # Flask constructor will give an object of WSGI application
+
 print(os.getcwd())
 
-# an object of WSGI application
-from flask import Flask
-app = Flask(__name__) # Flask constructor
-
-
-import numpy as np
-from flask import Flask, request, jsonify, render_template
-import pickle
-import slr_model
-
-app = Flask(__name__)
-model = pickle.load(open('demo_slr.pkl', 'rb'))
+model = pickle.load(
+    open(
+        MODEL_PICKLE_FILE_NAME,
+        'rb'
+    )
+)
 
 @app.route('/')
 def home():
@@ -46,6 +47,3 @@ def predict_api():
 
     output = prediction[0]
     return jsonify(output)
-
-if __name__ == "__main__":
-    app.run(debug=True)
