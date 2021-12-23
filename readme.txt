@@ -1,35 +1,21 @@
-$ cd demo_slr
-# outermost demo_slr folder
+"""
+Note:
+    $ --> means terminal/ command prompt
+    # means comment
+    plain line is output for the command executed in the terminal
 
-$ ls
-Procfile    asgi.py    demo_slr    envSLR    local_run.py    readme.txt
-request_flask.py    requirements.txt    wsgi.py
+    *nix --> mac, linux systems or any unix based systems
+"""
 
-$ python3 --version
-Python 3.5.2
-# or greater
+# 1. Make sure you are in the project directory ``demo_slr`` (the directory in which this file is).
+# 2. Once you are in ``demo_slr``, follow the instructions in the file ``readme_env_creation.txt``
+#    to create and activate the virtual environment.
 
-$ python3 -m venv envSLR
+# 3. Make sure that the virtual environment is active and then follow ``readme_requirements.txt``
+#    to install all the python dependancies to conduct lab experiments on ``demo_slr`` application.
 
-$ source ./envSLR/bin/activate
 
-(envSLR) ... $ which python
-.../demo_slr/envSLR/bin/python
-
-(envSLR) ... $ which pip
-.../demo_slr/envSLR/bin/pip
-
-(envSLR) ... $ pip install -r requirements.txt
-# installation successfull
-
-(envSLR) ... $ python local_run.py
- * Serving Flask app 'demo_slr.app_flask' (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: on
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
- * Restarting with stat
-...
-
-# goto http://127.0.0.1:5000/
+# 4. There are 3 lab experiments to do.
+#       1. follow ``readme_lab1.txt`` to conduct first experiment.
+#       2. follow ``readme_lab2.txt`` to conduct second experiment.
+#       3. follow ``readme_lab3.txt`` to conduct third experiment.

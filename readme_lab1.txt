@@ -3,6 +3,8 @@ Note:
     $ --> means terminal/ command prompt
     # means comment
     plain line is output for the command executed in the terminal
+
+    *nix --> mac, linux systems or any unix based systems
 """
 
 (envSLR) [...] $ python local_run.py
@@ -18,4 +20,4 @@ Note:
 
 # goto http://127.0.0.1:5000/ in your prefered browser
 # and test your code.
-# once done with the lab1 press CTRL+C 1/2 times to stop this server.
+# once done with the lab1 press CTRL+C 1 or 2 times (as needed) to stop this server.
